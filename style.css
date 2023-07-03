@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    color: #FFF;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #232231;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.header{
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2c3e;
+    padding: 20px 0;
+    color: #FFF;
+}
+
+.game-info-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 32px 0;
+}
+
+.game-info-container button{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 16px 24px;
+    background-color: #DF1F2D;
+}
+
+.game-info-container button:hover{
+    transition: 0.4s;
+    border: 2px solid #2B3784;
+}
+
+.game-info-container ul li{
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+.game-container{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    gap: 48px;
+    visibility: hidden;
+}
+
+.game-container .choice{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+    background-color: #DF1F2D;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+
+.game-container .choice:hover{
+    transition: 0.4s;
+    border: 2px solid #2B3784;
+}
+
+.game-container .choice h3{
+    color: #fff;
+}
+
+.scorecard-container{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    margin-bottom: 40px;
+}
+
+.game-details-container{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.game-details-container button{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 16px 24px;
+    background-color: #2B3784;
+    visibility: hidden;
+}
+
+.game-details-container button:hover{
+    transition: 0.4s;
+    border: 2px solid #DF1F2D;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2c3e;
+    padding: 10px 0;
+    gap: 8px;
+    color: #FFF;
+}
+
+.footer img{
+    width: 24px;
+    margin-bottom: 2px;
+}

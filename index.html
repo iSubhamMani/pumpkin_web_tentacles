@@ -4,18 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pumpkin, Web & Tentacles</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
 </head>
 <body>
     <div class="header">
         <h1>Pumpkin, Web & Tentacles</h1>
     </div>
 
-    <div class="start-game-container">
+    <div class="game-info-container">
+        <p>
+            <ul>
+                <li>Pumpkin Bomb beats Tentacles</li>
+                <li>Tentacles beats Web</li>
+                <li>Web beats Pumpkin Bomb</li>
+            </ul>
+        </p>
         <button class="start-game-btn">Play</button>
     </div>
 
     <div class="game-container">
+        <div class="choice">
+            <img src="./img/pumpkin.png" alt="">
+            <h3>Pumpkin Bomb</h3>
+        </div>
+        <div class="choice">
+            <img src="./img/cobweb.png" alt="">
+            <h3>Web</h3>
+        </div>
+        <div class="choice">
+            <img src="./img/robotic-arm.png" alt="">
+            <h3>Tentacles</h3>
+        </div>
+    </div>
 
+    <div class="scorecard-container">
+        <div class="playerScore">
+            
+        </div>
+        <div class="computerScore">
+            
+        </div>
+    </div>
+
+    <div class="game-details-container">
+        <h1 class="game-details-text">Choose your weapon</h1>
+        <button class="replay-btn">Replay</button>
     </div>
 
     <div class="footer">
