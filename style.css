@@ -43,7 +43,7 @@ body{
     font-size: 20px;
     color: #fff;
     font-weight: 700;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 8px;
     padding: 16px 24px;
     background-color: #DF1F2D;
@@ -51,7 +51,7 @@ body{
 
 .game-info-container button:hover{
     transition: 0.4s;
-    border: 2px solid #2B3784;
+    border: 1px solid #fff;
 }
 
 .game-info-container ul li{
@@ -85,7 +85,7 @@ body{
     transition: 0.4s;
     border: 2px solid #2B3784;
     transform: scale(1.1);
-    box-shadow: 2px 2px 8px #888888;
+    box-shadow: 1px 1px 10px #888888;
 
 }
 
@@ -143,15 +143,15 @@ body{
     font-size: 20px;
     color: #fff;
     font-weight: 700;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: 8px;
     padding: 16px 24px;
-    background-color: #2B3784;
+    background-color: #DF1F2D;
     visibility: hidden;
 }
 
 .game-details-container button:hover{
-    border: 2px solid #DF1F2D;
+    border: 1px solid #fff;
 }
 
 .footer{
