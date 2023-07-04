@@ -2,8 +2,11 @@ const startGameBtn = document.querySelector('.start-game-btn');
 const gameInfoContainer = document.querySelector('.game-info-container');
 const gameContainer = document.querySelector('.game-container');
 const gameDetailsContainer = document.querySelector('.game-details-container');
+const gameDetailsText = document.querySelector('.game-details-text');
 const scoreCardContainer = document.querySelector('.scorecard-container');
 const replayBtn = document.querySelector('.replay-btn');
+const playerScoreText = document.querySelector('.playerScore');
+const computerScoreText = document.querySelector('.computerScore');
 
 let playerScore = 0;
 let computerScore = 0;
@@ -46,10 +49,18 @@ function playRound(userChoice){
         roundNumber++;
     }
 
-    console.log(roundNumber);
+    playerScoreText.textContent = `You: ${playerScore}`;
+    computerScoreText.textContent = `Computer: ${computerScore}`;
+
     if(roundNumber === 5){
         gameOver();
+        return;
     }
+
+    gameInfoContainer.textContent = `Round: ${roundNumber+1}`;
+
+    console.log(roundNumber);
+    
 }
 
 function generateRandomNumber(){
@@ -109,6 +120,14 @@ function newGame(){
     playerScore = 0;
     computerScore = 0;
     roundNumber = 0;
+
+    // set round number
+    gameInfoContainer.style.fontSize = '32px';
+    gameInfoContainer.textContent = `Round: ${roundNumber+1}`;
+
+    //set scorecard
+    playerScoreText.textContent = `You: ${playerScore}`;
+    computerScoreText.textContent = `Computer: ${computerScore}`;
 }
 
 function doNothing(){
