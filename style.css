@@ -115,7 +115,6 @@ body{
 }
 
 .game-details-container button:hover{
-    transition: 0.4s;
     border: 2px solid #DF1F2D;
 }
 
