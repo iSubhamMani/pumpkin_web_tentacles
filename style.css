@@ -119,6 +119,22 @@ body{
     visibility: hidden;
 }
 
+.game-details-text-container{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-details-text-container img{
+    margin-bottom: 10px;
+}
+
+.game-details-text-container span{
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
 .game-details-container button{
     font-size: 20px;
     color: #fff;

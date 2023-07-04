@@ -54,6 +54,8 @@ function playRound(userChoice){
 
     if(roundNumber === 5){
         gameOver();
+        // check for win
+        checkResult();
         return;
     }
 
@@ -61,6 +63,18 @@ function playRound(userChoice){
 
     console.log(roundNumber);
     
+}
+
+function checkResult(){
+    if(playerScore > computerScore){
+        gameDetailsText.textContent = "You win! With great power comes great responsibility";
+    }
+    else if(computerScore > playerScore){
+        gameDetailsText.textContent = "You Lose! Gonna cry?";
+    }
+    else{
+        gameDetailsText.textContent = "Match Tie..";
+    }
 }
 
 function generateRandomNumber(){
@@ -89,24 +103,31 @@ function getComputerChoice(){
 function roundResult(playerChoice, computerChoice){
 
     if(playerChoice === computerChoice){
+        gameDetailsText.textContent = "That's a Tie!";
         return "MATCH TIE";
     }
     else if(playerChoice === "PUMPKIN_BOMB" && computerChoice === "WEB"){
+        gameDetailsText.textContent = "I am really gonna enjoy this";
         return "LOSE";
     }
     else if(playerChoice === "WEB" && computerChoice === "PUMPKIN_BOMB"){
+        gameDetailsText.textContent = "Impressive, your parents must be very proud";
         return "WIN";
     }
     else if(playerChoice === "PUMPKIN_BOMB" && computerChoice === "TENTACLES"){
+        gameDetailsText.textContent = "I miscalculated";
         return "WIN";
     }
     else if(playerChoice === "TENTACLES" && computerChoice === "PUMPKIN_BOMB"){
+        gameDetailsText.textContent = "You know I'm something of a gamer myself";
         return "LOSE";
     }
     else if(playerChoice === "WEB" && computerChoice === "TENTACLES"){
+        gameDetailsText.textContent = "Brilliant but lazy";
         return "LOSE"
     }
     else if(playerChoice === "TENTACLES" && computerChoice === "WEB"){
+        gameDetailsText.textContent = "I don't believe this.. I don't believe you";
         return "WIN";
     }
 }
@@ -149,6 +170,7 @@ function refreshGame(){
     tentacles.style.pointerEvents = 'visible';
     console.clear();
     replayBtn.style.visibility = 'hidden';
+    gameDetailsText.textContent = "Choose your weapon";
 }
 
 replayBtn.addEventListener('click', () => {
