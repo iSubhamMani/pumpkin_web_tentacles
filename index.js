@@ -14,60 +14,24 @@ const pumpkinBomb = document.querySelector('.pumpkin-bomb-choice');
 const web = document.querySelector('.web-choice');
 const tentacles = document.querySelector('.tentacles-choice');
 
-startGameBtn.addEventListener('click', () => {
-    gameInfoContainer.textContent = "";
-    playGame();
-})
 
 pumpkinBomb.addEventListener('click', () => {
-    const round_result = roundResult("PUMPKIN_BOMB", getComputerChoice());
-    console.log(round_result);
-
-    if(round_result === "WIN"){
-        playerScore++;
-        roundNumber++;
-    }
-    else if(round_result === "LOSE"){
-        computerScore++;
-        roundNumber++;
-    }
-    else{
-        roundNumber++;
-    }
-
-    console.log(roundNumber);
-    if(roundNumber === 5){
-        console.log("Game Over");
-        replayBtn.style.visibility = 'visible';
-    }
-});
-
+    playRound("PUMPKIN_BOMB");
+})
 web.addEventListener('click', () => {
-    const round_result = roundResult("WEB", getComputerChoice());
-    console.log(round_result);
-
-    if(round_result === "WIN"){
-        playerScore++;
-        roundNumber++;
-    }
-    else if(round_result === "LOSE"){
-        computerScore++;
-        roundNumber++;
-    }
-    else{
-        roundNumber++;
-    }
-
-    console.log(roundNumber);
-    if(roundNumber === 5){
-        console.log("Game Over");
-        // replay btn
-        replayBtn.style.visibility = 'visible';
-    }
+    playRound("WEB");
 })
-
 tentacles.addEventListener('click', () => {
-    const round_result = roundResult("TENTACLES", getComputerChoice());
+    playRound("TENTACLES");
+})
+
+startGameBtn.addEventListener('click', () => {
+    gameInfoContainer.textContent = "";
+    newGame();
+})
+
+function playRound(userChoice){
+    const round_result = roundResult(userChoice, getComputerChoice());
     console.log(round_result);
 
     if(round_result === "WIN"){
@@ -84,10 +48,9 @@ tentacles.addEventListener('click', () => {
 
     console.log(roundNumber);
     if(roundNumber === 5){
-        console.log("Game Over");
-        replayBtn.style.visibility = 'visible';
+        gameOver();
     }
-})
+}
 
 function generateRandomNumber(){
     const randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -137,7 +100,7 @@ function roundResult(playerChoice, computerChoice){
     }
 }
 
-function playGame(){
+function newGame(){
     gameContainer.style.visibility = 'visible';
     gameDetailsContainer.style.visibility = 'visible';
     scoreCardContainer.style.visibility = 'visible';
@@ -146,18 +109,30 @@ function playGame(){
     playerScore = 0;
     computerScore = 0;
     roundNumber = 0;
+}
 
-    // On click events
-    
+function doNothing(){
+    return;
 }
 
 function gameOver(){
-    pumpkinBomb.removeEventListener();
-    
+    pumpkinBomb.style.pointerEvents = 'none';
+    web.style.pointerEvents = 'none';
+    tentacles.style.pointerEvents = 'none';
+
+    console.log("Game Over");
+    replayBtn.style.visibility = 'visible';
+}
+
+function refreshGame(){
+    pumpkinBomb.style.pointerEvents = 'visible';
+    web.style.pointerEvents = 'visible';
+    tentacles.style.pointerEvents = 'visible';
+    console.clear();
+    replayBtn.style.visibility = 'hidden';
 }
 
 replayBtn.addEventListener('click', () => {
-    replayBtn.style.visibility = 'hidden';
-    console.clear();
-    playGame();
+    refreshGame();
+    newGame();
 })
